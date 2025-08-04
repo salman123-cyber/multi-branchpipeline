@@ -5,17 +5,17 @@ pipeline {
         stage('Install Git') {
             steps {
                 script {
-                        sh 'sudo apt-get update'
-                        sh 'sudo apt-get install -y git'
+                        sh 'apt-get update'
+                        sh 'apt-get install -y git'
+                        sh 'echo "Git Installed"'
                 }
             }
         }
         stage('Install Docker') {
             steps {
                 script {
-                        sh 'sudo apt-get update'
-                        sh 'sudo apt-get install -y docker.io'
-                        sh 'sudo usermod -aG docker jenkins' // Add jenkins user to docker group
+                        sh 'apt-get install -y docker.io'
+                        sh 'usermod -aG docker jenkins' // Add jenkins user to docker group
                 }
             }
         }
