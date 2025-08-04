@@ -5,6 +5,7 @@ pipeline {
         stage('Install Git') {
             steps {
                 script {
+                        sh 'whoami'
                         sh 'apt-get update'
                         sh 'apt-get install -y git'
                         sh 'echo "Git Installed"'
